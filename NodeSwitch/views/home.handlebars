@@ -1,0 +1,73 @@
+<h1>{{> page/title}}</h1>
+
+{{> page/nav}}
+<style>
+canvas {
+    display: none;
+}
+.message {
+    display: none;
+} 
+.hidden {
+	display: none;
+}
+.bus {
+	width: 290px;
+	margin: auto;
+	display: table;
+}
+input.btn.btn-primary {
+text-align: center;
+margin-top: 10px;
+width:100%;
+margin-top:3px;
+}
+#output1 {
+	background-color: rgba(66, 139, 202, 0.53);
+	border-radius: 5px;
+	margin-top: 5px; 
+	padding: 2px 21px;
+}
+.switches {
+	width: 290px;
+}
+.gravatar {
+	display: inline-block;
+	margin: -4px 4px;
+}
+</style>
+<div class="bus">
+	<input type="button" class= "btn btn-primary" onclick="BusTimes()" value="Bus TimeTable"/>
+	<ul id="output1" class = "hidden"></ul>
+</div>
+
+
+
+<div class="switches">
+	<input type="button" class= "btn btn-primary" onclick="toggle()" value="Switchs"/>
+	<div class="switchBox hidden">
+			<h3> Switch 1</h3>
+	  		<div class="gravatar transitions command"  data-id="8" data-toggleState="1">
+						
+				<div class="imgContainer">
+					<img src="images/on.png"/>
+							
+				</div>	
+						
+				<canvas height="100%" width="100%" class="circleCanvas circleSvg transitions"></canvas>
+				<div class = "message transitions"></div>
+			</div>
+			<!--OFF-->
+			<div class="gravatar transitions command"  data-id="8" data-command='0'>
+						
+				<div class="imgContainer">
+					<img src="images/off.png"/>
+							
+				</div>	
+						
+				<canvas height="100%" width="100%" class="circleCanvas circleSvg transitions"></canvas>
+				<div class = "message transitions"></div>
+			</div>
+		</div>
+	</div>  
+	
